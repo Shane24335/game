@@ -30,7 +30,29 @@
         <button class="game-restart" onclick="restartGame()">Restart Game</button>
 
     </section>
-    <script src="game.js"></script>
+    
+    <script>
+        function gameMode(src){
+            if(src === "game.js"){
+                loadScript("game.js")
+            } else if(src === "ai.js") {
+                loadScript("")
+            }
+        }
+        function loadScript(src) {
+            var el = document.createElement("script");
+            el.src = src;
+            document.body.appendChild(el)
+        };
+    </script>
+    
+    <label for="mode-select">Game Mode</label>
+    
+    <select name="modes" id="mode-select">
+        <option value="multi" onselect="gameMode('game.js')">Multiplayer</option>
+        <option value="single" onselect="gameMode('ai.js')">Singleplayer</option>
+    </select>
+
 </body>
 
 </html>

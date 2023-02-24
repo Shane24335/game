@@ -1,5 +1,6 @@
 
-const ai_player = 'x';
+const currentPlayer = 'x'
+const ai_player = '0';
 
 function emptySquares () {
     return origBoard.filter(item => typeof item === 'number');
@@ -12,7 +13,7 @@ function botPicksSpot () {
 function minimax(newBoard, player) {
     let availableSpots = emptySquares();
       
-    if (onCheckWin(newBoard, HUMAN_PLAYER)) {
+    if (onCheckWin(newBoard, currentPlayer)) {
         return { score: -10 }
     } else if (onCheckWin(newBoard, AI_PLAYER)) {
         return { score: 10 }
@@ -28,7 +29,7 @@ function minimax(newBoard, player) {
         newBoard[availableSpots[i]] = player;
       
         if (player === AI_PLAYER) {
-            let result = minimax(newBoard, HUMAN_PLAYER);
+            let result = minimax(newBoard, currentPlayer);
             move.score = result.score;
         } else {
             let result = minimax(newBoard, AI_PLAYER);
