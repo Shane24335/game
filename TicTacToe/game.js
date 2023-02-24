@@ -1,3 +1,5 @@
+
 function restartGame() {
     location.reload();
 }
+
