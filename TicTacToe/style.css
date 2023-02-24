@@ -1,4 +1,8 @@
 
+body {
+    font-family: "Arial", sans-serif;
+}
+
 section {
     text-align: center;
 }
@@ -6,15 +10,17 @@ section {
 .game-container {
     display: grid;
     grid-template-columns: repeat(3, auto);
-    border: 2px solid;
+    border: 2px solid rgb(65, 65, 65);
     width: 306px;
     margin: 50px auto;
 }
 
 .cell {
-    border: 1px solid;
+    /* font-family: "Permanent Marker", cursive; */
+    border: 1px solid rgb(126, 126, 126);
     width: 100px;
     height: 100px;
     line-height: 100px;
     box-shadow: 0 0 0 1px #333333;
+    cursor: pointer;
 }
