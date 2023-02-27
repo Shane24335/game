@@ -32,10 +32,10 @@
     
     <script>
         function gameMode(src){
-            if(src === "game.js"){
+            if(select.value === "game.js"){
                 loadScript("game.js")
-            } else if(src === "ai.js") {
-                loadScript("")
+            } else if(select.value === "ai.js") {
+                loadScript("ai.js")
             }
         }
         function loadScript(src) {
