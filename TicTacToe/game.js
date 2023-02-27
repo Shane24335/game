@@ -100,4 +100,3 @@ function restartGame() {
     location.reload();
 }
 
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', cellClick));
