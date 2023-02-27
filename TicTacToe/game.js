@@ -21,11 +21,14 @@ const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
 
 statusDisplay.innerHTML = currentPlayerTurn();
 
+// Actual game functions
 function cellPlayed(clickedCell, clickedCellIndex) {
+
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
 }
 
+// 8 possible winning conditions
 const winningConditions = 
     [
         [0, 1, 2],
