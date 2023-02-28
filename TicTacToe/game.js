@@ -41,6 +41,7 @@ const rules = {
         gameState[clickedCellIndex] = currentPlayer;
         clickedCell.innerHTML = currentPlayer;
     },
+    //creates a div for win/lose conditions
     resultPopup(result, player) {
         let resultDivOverlay = document.createElement("div")
         resultDivOverlay.id = "resultdivoverlay"
@@ -76,6 +77,7 @@ const rules = {
     }
 }
 
+//
 const gameBoard = {
     board: document.getElementsByClassName("cell"),
     boxes: [
@@ -166,6 +168,7 @@ function restartGame() {
     location.reload();
 }
 
+//ai movement
 function cpuMoves() {
     function computerPlay() {
         let random = [
