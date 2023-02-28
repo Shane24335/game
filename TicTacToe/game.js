@@ -5,7 +5,21 @@ const statusDisplay = document.querySelector('.game-status');
 let gameActive = true;
 
 // Store current player
-let currentPlayer = "X";
+const playerCreator = {
+    names: [
+        playerOneName = document.getElementById("player1name"),
+        playerTwoName = document.getElementById("player2name")
+    ],
+    scores: [
+        playerOneScore = document.getElementById("playeronescore"),
+        playerTwoScore = document.getElementById("playertwoscore")
+    ],
+    createPlayer(name) {
+        return {
+            name: name,
+        }
+    },
+};
 
 // Store game state in empty strings in the form of an array
 let gameState = ["", "", "", "", "", "", "", "", ""];
@@ -28,8 +42,8 @@ function cellPlayed(clickedCell, clickedCellIndex) {
     clickedCell.innerHTML = currentPlayer;
 }
 
-// 8 possible winning conditions in a normal 3x3 game
-const winningConditions =
+// 8 possible winning conditions
+const winningConditions = 
     [
         [0, 1, 2],
         [0, 3, 6],
@@ -104,4 +118,34 @@ function restartGame() {
     location.reload();
 }
 
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', cellClick));
+//ai movement
+function cpuMoves() {
+    function computerPlay() {
+        let random = [
+            gameBoard.cell[0], gameBoard.cell[1], gameBoard.cell[2],
+            gameBoard.cell[3], gameBoard.cell[4], gameBoard.cell[5],
+            gameBoard.cell[6], gameBoard.cell[7], gameBoard.cell[8]
+        ];
+        let randomBox = random[Math.random() * random.length];
+        if (
+            gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" &&
+            gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" &&
+            gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "") {
+            return
+        } else if (randomBox.innerHTML == "X" || randomBox.innerHTML == "0") {
+            computerPlay()
+        } else if (randomBox.innerHTML == "") {
+            randomBox.innerHTML = "O"
+        }
+    }
+    for (let i = 0; i < gameBoard.board.length; i++) {
+        gameBoard.board[i].addEventListener("click", function move2() {
+            if(gameBoard.board[i].innerHTML == "") {
+                gameBoard.board[i].innerHTML= "X"
+                computerPlay()
+            } else return
+
+        })
+        
+    }
+}
