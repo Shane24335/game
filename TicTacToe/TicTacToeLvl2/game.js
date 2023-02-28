@@ -8,7 +8,7 @@ let gameActive = true;
 let currentPlayer = "X";
 
 // Store game state in empty strings in the form of an array
-let gameState = ["", "", "", "", "", "", "", "", ""];
+let gameState = ["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
 
 // Winning statement
 const winningMessage = () => `Player ${currentPlayer} has won!`;
@@ -28,17 +28,19 @@ function cellPlayed(clickedCell, clickedCellIndex) {
     clickedCell.innerHTML = currentPlayer;
 }
 
-// 8 possible winning conditions in a normal 3x3 game
+// 10 possible winning conditions in a 4x4 game
 const winningConditions =
     [
-        [0, 1, 2],
-        [0, 3, 6],
-        [0, 4, 8],
-        [1, 4, 7],
-        [2, 4, 6],
-        [2, 5, 8],
-        [3, 4, 5],
-        [6, 7, 8]
+        [0,   1,    2,   3],
+        [4,   5,    6,   7],
+        [8,   9,   10,  11],
+        [12,  13,  14,  15],
+        [0, 4, 8, 12],
+        [0, 5, 10, 15],
+        [1, 5, 9, 13],
+        [2, 6, 10, 14],
+        [3, 7, 11, 15],
+        [3, 6, 9, 12]
     ];
 
 function playerChange() {
@@ -52,18 +54,20 @@ function resultValidation() {
 
     let roundWon = false;
 
-    for (let i = 0; i <= 7; i++) {
+    for (let i = 0; i <= 10; i++) {
+        
         const winCondition = winningConditions[i];
 
         let a = gameState[winCondition[0]];
         let b = gameState[winCondition[1]];
         let c = gameState[winCondition[2]];
+        let d = gameState[winCondition[3]];
 
-        if (a === '' || b === '' || c === '') {
+        if (a === '' || b === '' || c === ''|| d === '') {
             continue;
         }
 
-        if (a === b && b === c) {
+        if (a === b && b === c && c === d) {
             roundWon = true;
             break;
         }
