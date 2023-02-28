@@ -153,6 +153,6 @@ document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click'
           if(gameBoard.board[i].innerHTML == "") {
                 gameBoard.board[i].innerHTML= "X"
                 computerPlay()
-            } else return
+            } else return;
 
 
