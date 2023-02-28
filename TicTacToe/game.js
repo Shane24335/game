@@ -36,65 +36,14 @@ const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
 statusDisplay.innerHTML = currentPlayerTurn();
 
 // Actual game functions
-const rules = {
-    cellPlayed(clickedCell, clickedCellIndex) {
-        gameState[clickedCellIndex] = currentPlayer;
-        clickedCell.innerHTML = currentPlayer;
-    },
-    //creates a div for win/lose conditions
-    resultPopup(result, player) {
-        let resultDivOverlay = document.createElement("div")
-        resultDivOverlay.id = "resultdivoverlay"
-        document.body.appendChild(resultDivOverlay)
-        let resultDiv = document.createElement("div");
-        resultDiv.id = "resultdiv"
-        resultDivOverlay.appendChild(resultDiv)
-        let resultDivTitleBar = document.createElement("div")
-        resultDivTitleBar.id = "resultdivtitlebar"
-        resultDiv.appendChild(resultDivTitleBar)
-        let resultDivTitle = document.createElement("span")
-        resultDivTitle.id = "resultdivtitle"
-        resultDivTitle.innerHTML = "RESULT"
-        resultDivTitleBar.appendChild(resultDivTitle)
-        let resultDivContent = document.createElement("div")
-        resultDivContent.id = "resultdivcontent"
-        resultDivContent.innerHTML = ""
-        resultDiv.appendChild(resultDivContent)
-        let resultButton = document.createElement("button")
-        resultButton.id = "resultbutton"
-        resultButton.type = "button"
-        resultButton.innerHTML = "OK"
-        resultDiv.appendChild(resultButton)
-        resultButton.addEventListener("click", () => {
-            document.body.removeChild(resultDivOverlay)
-            restartGame()
-        });
-        if (result === "win") {
-            resultDivContent.innerHTML = player + " WINS"
-        } else if (result === "draw") {
-            resultDivContent.innerHTML = "DRAW"
-        };
-    }
-}
+function cellPlayed(clickedCell, clickedCellIndex) {
 
-//
-const gameBoard = {
-    board: document.getElementsByClassName("cell"),
-    boxes: [
-        cell0 = document.getElementById("cell0"),
-        cell1 = document.getElementById("cell1"),
-        cell2 = document.getElementById("cell2"),
-        cell3 = document.getElementById("cell3"),
-        cell4 = document.getElementById("cell4"),
-        cell5 = document.getElementById("cell5"),
-        cell6 = document.getElementById("cell6"),
-        cell7 = document.getElementById("cell7"),
-        cell8 = document.getElementById("cell8"),
-    ]
+    gameState[clickedCellIndex] = currentPlayer;
+    clickedCell.innerHTML = currentPlayer;
 }
 
 // 8 possible winning conditions
-const winningConditions =
+const winningConditions = 
     [
         [0, 1, 2],
         [0, 3, 6],
@@ -127,9 +76,10 @@ function resultValidation() {
         if (a === '' || b === '' || c === '') {
             continue;
         }
+
         if (a === b && b === c) {
             roundWon = true;
-            break
+            break;
         }
     }
 
