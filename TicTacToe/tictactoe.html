@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="style.css">
+    <script type="tex/javascript" src="game.js"></script>
 </head>
 
 <body>
@@ -14,22 +15,28 @@
 
         <h1 class="game-title">Tic Tac Toe</h1>
         <div class="game-container">
-            <div data-cell-index="0" class="cell"></div>
-            <div data-cell-index="1" class="cell"></div>
-            <div data-cell-index="2" class="cell"></div>
-            <div data-cell-index="3" class="cell"></div>
-            <div data-cell-index="4" class="cell"></div>
-            <div data-cell-index="5" class="cell"></div>
-            <div data-cell-index="6" class="cell"></div>
-            <div data-cell-index="7" class="cell"></div>
-            <div data-cell-index="8" class="cell"></div>
+            <div data-cell-index="0" class="cell" id="0"></div>
+            <div data-cell-index="1" class="cell" id="1"></div>
+            <div data-cell-index="2" class="cell" id="2"></div>
+            <div data-cell-index="3" class="cell" id="3"></div>
+            <div data-cell-index="4" class="cell" id="4"></div>
+            <div data-cell-index="5" class="cell" id="5"></div>
+            <div data-cell-index="6" class="cell" id="6"></div>
+            <div data-cell-index="7" class="cell" id="7"></div>
+            <div data-cell-index="8" class="cell" id="8"></div>
         </div>
 
 
-
-        <h2 class="game-status"></h2>
-        <button class="game-restart" onclick="restartGame()">Restart Game</button>
-        <button class="game-singlePlayer" onclick="">Single Player</button>
+        <div id="gamemode">
+            <h2>Game Mode</h2>
+            <div id="modebuttons">
+                <button class="game-restart" onclick="restartGame()">Restart Game</button>
+                <button class="game-singlePlayer" onclick="">Single Player</button>
+                <button class="game-multiplayer" onclick="">Multiplayer</button>
+            </div>
+        </div>
+        
+        
 
     </section>
     
@@ -50,11 +57,6 @@
     
     <label for="mode-select">Game Mode</label>
     
-    <select name="modes" id="mode-select">
-        <option value="multi" onselect="gameMode('game.js')">Multiplayer</option>
-        <option value="single" onselect="gameMode('ai.js')">Singleplayer</option>
-    </select>
-
 </body>
 
 </html>
