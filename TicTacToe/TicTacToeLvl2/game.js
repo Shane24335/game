@@ -26,6 +26,7 @@ function cellPlayed(clickedCell, clickedCellIndex) {
 
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
+
 }
 
 // 10 possible winning conditions in a 4x4 game
@@ -54,7 +55,7 @@ function resultValidation() {
 
     let roundWon = false;
 
-    for (let i = 0; i <= 10; i++) {
+    for (let i = 0; i <= 9; i++) {
         
         const winCondition = winningConditions[i];
 
@@ -63,11 +64,11 @@ function resultValidation() {
         let c = gameState[winCondition[2]];
         let d = gameState[winCondition[3]];
 
-        if (a === '' || b === '' || c === ''|| d === '') {
+        if (a === '' || b === '' || c === '' || d === '') {
             continue;
         }
 
-        if (a === b && b === c && c === d) {
+        if (a === b && b === c) {
             roundWon = true;
             break;
         }
