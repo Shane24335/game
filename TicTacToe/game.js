@@ -14,6 +14,10 @@ const playerCreator = {
         playerOneScore = document.getElementById("playeronescore"),
         playerTwoScore = document.getElementById("playertwoscore")
     ],
+    turns: [
+        playerOneTurn = "",
+        playerTwoTurn = ""
+    ],
     createPlayer(name) {
         return {
             name: name,
@@ -43,7 +47,7 @@ function cellPlayed(clickedCell, clickedCellIndex) {
 }
 
 // 8 possible winning conditions
-const winningConditions = 
+const winningConditions =
     [
         [0, 1, 2],
         [0, 3, 6],
@@ -118,8 +122,11 @@ function restartGame() {
     location.reload();
 }
 
+var gameBoard = document.getElementById("game-container")
+
 //ai movement
 function cpuMoves() {
+
     function computerPlay() {
         let random = [
             gameBoard.cell[0], gameBoard.cell[1], gameBoard.cell[2],
@@ -128,9 +135,9 @@ function cpuMoves() {
         ];
         let randomBox = random[Math.random() * random.length];
         if (
-            gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" &&
-            gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" &&
-            gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "") {
+            gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[1].innerHTML !== "" && gameBoard.cell[2].innerHTML !== "" &&
+            gameBoard.cell[3].innerHTML !== "" && gameBoard.cell[4].innerHTML !== "" && gameBoard.cell[5].innerHTML !== "" &&
+            gameBoard.cell[6].innerHTML !== "" && gameBoard.cell[7].innerHTML !== "" && gameBoard.cell[8].innerHTML !== "") {
             return
         } else if (randomBox.innerHTML == "X" || randomBox.innerHTML == "0") {
             computerPlay()
@@ -140,11 +147,10 @@ function cpuMoves() {
     }
     for (let i = 0; i < gameBoard.board.length; i++) {
         gameBoard.board[i].addEventListener("click", function move2() {
-            if(gameBoard.board[i].innerHTML == "") {
-                gameBoard.board[i].innerHTML= "X"
+            if (gameBoard.board[i].innerHTML == "") {
+                gameBoard.board[i].innerHTML = "X"
                 computerPlay()
             } else return
-
         })
         
     }

@@ -72,6 +72,19 @@ section {
     cursor: pointer;
 }
 
+.game-multiplayer {
+    font-size: 13px;
+    font-family: 'verdana', cursive;
+    font-weight: 550;
+    color: rgb(59, 59, 59);
+    background-color: rgb(199, 199, 199);
+    padding: 14px;
+    margin: 15px auto;
+    border: 3px solid rgb(70, 70, 70);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 .bigger-game {
     font-size: 13px;
     font-family: 'verdana', cursive;
@@ -82,7 +95,7 @@ section {
     margin: 15px auto;
     border: 3px solid rgb(70, 70, 70);
     border-radius: 8px;
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 
 a:link {
