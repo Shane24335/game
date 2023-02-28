@@ -43,7 +43,7 @@ function cellPlayed(clickedCell, clickedCellIndex) {
 }
 
 // 8 possible winning conditions in a normal 3x3 game
-const winningConditions =
+const winningConditions = 
     [
         [0, 1, 2],
         [0, 3, 6],
@@ -140,6 +140,7 @@ function cpuMoves() {
     }
     for (let i = 0; i < gameBoard.board.length; i++) {
         gameBoard.board[i].addEventListener("click", function move2() {
+
             if (gameBoard.board[i].innerHTML == "") {
                 gameBoard.board[i].innerHTML= "X"
                 computerPlay()
@@ -149,3 +150,9 @@ function cpuMoves() {
 }
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', cellClick));
+          if(gameBoard.board[i].innerHTML == "") {
+                gameBoard.board[i].innerHTML= "X"
+                computerPlay()
+            } else return
+
+
