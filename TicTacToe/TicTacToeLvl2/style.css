@@ -15,9 +15,9 @@ section {
 
 .game-container {
     display: grid;
-    grid-template-columns: repeat(4, auto); /*This is how the board is displayed in its original 3x3 setting. To add more rows/columns, this would need to be changed*/
+    grid-template-columns: repeat(4, auto); /* This is how the board is displayed in its original 3x3 setting. To make the grid larger, this would need to be changed */
     border: 2px solid rgb(65, 65, 65);
-    width: 408px;
+    width: 408px; /* Width and height also need to be changed when making the grid larger */
     height: 408px;
     margin: 45px auto;
     border-radius: 10px;
