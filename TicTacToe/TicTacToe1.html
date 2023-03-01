@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="style.css">
@@ -27,22 +28,19 @@
             <div data-cell-index="8" class="cell"></div>
         </div>
 
-
-
         <h2 class="game-status"></h2>
 
         <button class="game-restart" onclick="restartGame()">Restart Game</button>
-        <button class="game-singlePlayer" onclick="">Single-Player Mode</button>
+        <button class="game-singlePlayer" onclick="gameMode()">Single-Player Mode</button>
         <button class="bigger-game">
             <a href="C:\Users\ccedano\OneDrive - York County School of Technology\programming\GitHub\game\TicTacToe\TicTacToeLvl2\TicTacToe2.html">Bigger-Game Mode</a>
-        </button> 
+        </button>
+
     </section>
 
-        <button class="game-singlePlayer" onclick="">Single Player</button>
-    
-
-    <script>
-        function gameMode(src){
+    <script src="game.js">
+        
+         function gameMode(src){
             if(select.value === "game.js"){
                 loadScript("game.js")
             } else if(select.value === "ai.js") {
@@ -54,10 +52,11 @@
             el.src = src;
             document.body.appendChild(el)
         };
+
     </script>
-    
-    <label for="mode-select">Game Mode</label>
-    
+
+    <label for="mode-select">Game Mode</label>  
+
 
 </body>
 

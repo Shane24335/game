@@ -5,6 +5,15 @@ const statusDisplay = document.querySelector('.game-status');
 let gameActive = true;
 
 // Store current player
+let currentPlayer = "X";  
+
+    // function playerCreator(player1, player2) {
+    //     const p1name = prompt("Enter name for Player 1");
+    //     const p2name = prompt("Enter name for Player 2");
+    //     player1 = p1name
+    //     player2 = p2name
+    // } 
+
 const playerCreator = {
     names: [
         playerOneName = document.getElementById("player1name"),
@@ -31,7 +40,7 @@ const winningMessage = () => `Player ${currentPlayer} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
 
 // Game Turn
-const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+const currentPlayerTurn = () => `It's Player ${currentPlayer}'s turn`;
 
 statusDisplay.innerHTML = currentPlayerTurn();
 
@@ -139,6 +148,7 @@ function cpuMoves() {
         }
     }
     for (let i = 0; i < gameBoard.board.length; i++) {
+
         gameBoard.board[i].addEventListener("click", function move2() {
 
             if (gameBoard.board[i].innerHTML == "") {
@@ -149,10 +159,5 @@ function cpuMoves() {
     }
 }
 
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', cellClick));
-          if(gameBoard.board[i].innerHTML == "") {
-                gameBoard.board[i].innerHTML= "X"
-                computerPlay()
-            } else return;
-
+document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', cellClick)); 
 
