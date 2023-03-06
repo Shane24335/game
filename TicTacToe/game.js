@@ -128,36 +128,36 @@ function restartGame() {
 }
 
 //ai movement
-function cpuMoves() {
-    function computerPlay() {
-        let random = [
-            gameBoard.cell[0], gameBoard.cell[1], gameBoard.cell[2],
-            gameBoard.cell[3], gameBoard.cell[4], gameBoard.cell[5],
-            gameBoard.cell[6], gameBoard.cell[7], gameBoard.cell[8]
-        ];
-        let randomBox = random[Math.random() * random.length];
-        if (
-            gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" &&
-            gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" &&
-            gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "") {
-            return
-        } else if (randomBox.innerHTML == "X" || randomBox.innerHTML == "0") {
-            computerPlay()
-        } else if (randomBox.innerHTML == "") {
-            randomBox.innerHTML = "O"
-        }
-    }
-    for (let i = 0; i < gameBoard.board.length; i++) {
+// function cpuMoves() {
+//     function computerPlay() {
+//         let random = [
+//             gameBoard.cell[0], gameBoard.cell[1], gameBoard.cell[2],
+//             gameBoard.cell[3], gameBoard.cell[4], gameBoard.cell[5],
+//             gameBoard.cell[6], gameBoard.cell[7], gameBoard.cell[8]
+//         ];
+//         let randomBox = random[Math.random() * random.length];
+//         if (
+//             gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" &&
+//             gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" &&
+//             gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[0].innerHTML !== "") {
+//             return
+//         } else if (randomBox.innerHTML == "X" || randomBox.innerHTML == "0") {
+//             computerPlay()
+//         } else if (randomBox.innerHTML == "") {
+//             randomBox.innerHTML = "O"
+//         }
+//     }
+//     for (let i = 0; i < gameBoard.board.length; i++) {
 
-        gameBoard.board[i].addEventListener("click", function move2() {
+//         gameBoard.board[i].addEventListener("click", function move2() {
 
-            if (gameBoard.board[i].innerHTML == "") {
-                gameBoard.board[i].innerHTML= "X"
-                computerPlay()
-            } else return
-        }) 
-    }
-}
+//             if (gameBoard.board[i].innerHTML == "") {
+//                 gameBoard.board[i].innerHTML= "X"
+//                 computerPlay()
+//             } else return
+//         }) 
+//     }
+// }
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', cellClick)); 
 
