@@ -15,10 +15,10 @@ section {
 
 .game-container {
     display: grid;
-    grid-template-columns: repeat(3, auto); /* This is how the board is displayed in its original 3x3 setting. To make the grid larger, this would need to be changed */
+    grid-template-columns: repeat(4, auto); /* This is how the board is displayed in its original 3x3 setting. To make the grid larger, this would need to be changed */
     border: 2px solid rgb(65, 65, 65);
-    width: 306px; /* Width and height also need to be changed when making the grid larger */
-    height: 306px;
+    width: 408px; /* Width and height also need to be changed when making the grid larger */
+    height: 408px;
     margin: 45px auto;
     border-radius: 10px;
     border-style: none;
@@ -85,7 +85,7 @@ section {
     cursor: pointer;
 }
 
-.bigger-game {
+.smaller-game {
     font-size: 13px;
     font-family: 'verdana', cursive;
     font-weight: 550;
@@ -95,7 +95,7 @@ section {
     margin: 15px auto;
     border: 3px solid rgb(70, 70, 70);
     border-radius: 8px;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 a:link {

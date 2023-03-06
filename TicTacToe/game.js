@@ -5,25 +5,7 @@ const statusDisplay = document.querySelector('.game-status');
 let gameActive = true;
 
 // Store current player
-const playerCreator = {
-    names: [
-        playerOneName = document.getElementById("player1name"),
-        playerTwoName = document.getElementById("player2name")
-    ],
-    scores: [
-        playerOneScore = document.getElementById("playeronescore"),
-        playerTwoScore = document.getElementById("playertwoscore")
-    ],
-    turns: [
-        playerOneTurn = "",
-        playerTwoTurn = ""
-    ],
-    createPlayer(name) {
-        return {
-            name: name,
-        }
-    },
-};
+let currentPlayer = "X";
 
 // Store game state in empty strings in the form of an array
 let gameState = ["", "", "", "", "", "", "", "", ""];
@@ -125,50 +107,4 @@ function restartGame() {
 
 var gameBoard = document.getElementById("game-container")
 
-//ai movement
-function cpuMoves() {
-
-    function computerPlay() {
-        let random = [
-            gameBoard.cell[0], gameBoard.cell[1], gameBoard.cell[2],
-            gameBoard.cell[3], gameBoard.cell[4], gameBoard.cell[5],
-            gameBoard.cell[6], gameBoard.cell[7], gameBoard.cell[8]
-        ];
-        let randomBox = random[Math.random() * random.length];
-        if (
-            gameBoard.cell[0].innerHTML !== "" && gameBoard.cell[1].innerHTML !== "" && gameBoard.cell[2].innerHTML !== "" &&
-            gameBoard.cell[3].innerHTML !== "" && gameBoard.cell[4].innerHTML !== "" && gameBoard.cell[5].innerHTML !== "" &&
-            gameBoard.cell[6].innerHTML !== "" && gameBoard.cell[7].innerHTML !== "" && gameBoard.cell[8].innerHTML !== "") {
-            return
-        } else if (randomBox.innerHTML == "X" || randomBox.innerHTML == "0") {
-            computerPlay()
-        } else if (randomBox.innerHTML == "") {
-            randomBox.innerHTML = "O"
-        }
-    }
-    for (let i = 0; i < gameBoard.board.length; i++) {
-        gameBoard.board[i].addEventListener("click", function move2() {
-
-            if (gameBoard.board[i].innerHTML == "") {
-                gameBoard.board[i].innerHTML = "X"
-                computerPlay()
-            } else return
-        })
-
-
-
-        if (gameBoard.board[i].innerHTML == "") {
-            gameBoard.board[i].innerHTML = "X"
-            computerPlay()
-        } else return
-    }
-}
-
-
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', cellClick));
-if (gameBoard.board[i].innerHTML == "") {
-    gameBoard.board[i].innerHTML = "X"
-    computerPlay()
-} else return;
-
-
