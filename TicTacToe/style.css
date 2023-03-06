@@ -13,6 +13,11 @@ section {
     font-size: 35px;
 }
 
+.game-subTitle {
+    color: rgb(61, 65, 71);
+    font-size: 20px;
+}
+
 .game-container {
     display: grid;
     grid-template-columns: repeat(3, auto); /* This is how the board is displayed in its original 3x3 setting. To make the grid larger, this would need to be changed */

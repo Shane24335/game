@@ -5,7 +5,9 @@ const statusDisplay = document.querySelector('.game-status');
 let gameActive = true;
 
 // Store current player
+
 let currentPlayer = "X";
+
 
 // Store game state in empty strings in the form of an array
 let gameState = ["", "", "", "", "", "", "", "", ""];
@@ -17,7 +19,7 @@ const winningMessage = () => `Player ${currentPlayer} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
 
 // Game Turn
-const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+const currentPlayerTurn = () => `It's Player ${currentPlayer}'s turn`;
 
 statusDisplay.innerHTML = currentPlayerTurn();
 
@@ -106,3 +108,4 @@ function restartGame() {
 }
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', cellClick));
+
