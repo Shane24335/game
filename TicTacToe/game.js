@@ -5,7 +5,9 @@ const statusDisplay = document.querySelector('.game-status');
 let gameActive = true;
 
 // Store current player
-let currentPlayer = "X";  
+
+let currentPlayer = "X";
+
 
 // Store game state in empty strings in the form of an array
 let gameState = ["", "", "", "", "", "", "", "", ""];
@@ -28,8 +30,9 @@ function cellPlayed(clickedCell, clickedCellIndex) {
     clickedCell.innerHTML = currentPlayer;
 }
 
+
 // 8 possible winning conditions in a normal 3x3 game
-const winningConditions = 
+const winningConditions =
     [
         [0, 1, 2],
         [0, 3, 6],
@@ -104,5 +107,5 @@ function restartGame() {
     location.reload();
 }
 
-document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', cellClick)); 
+document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', cellClick));
 

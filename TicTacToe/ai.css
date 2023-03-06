@@ -1,24 +1,14 @@
-
 body {
     font-family: "Arial", sans-serif;
     background-color: rgb(231, 231, 231);
 }
 
-section {
-    text-align: center;
-}
-
-.game-title {
-    color: rgb(61, 65, 71);
-    font-size: 35px;
-}
-
 .game-container {
     display: grid;
-    grid-template-columns: repeat(4, auto); /* This is how the board is displayed in its original 3x3 setting. To make the grid larger, this would need to be changed */
+    grid-template-columns: repeat(3, auto); /* This is how the board is displayed in its original 3x3 setting. To make the grid larger, this would need to be changed */
     border: 2px solid rgb(65, 65, 65);
-    width: 408px; /* Width and height also need to be changed when making the grid larger */
-    height: 408px;
+    width: 306px; /* Width and height also need to be changed when making the grid larger */
+    height: 306px;
     margin: 45px auto;
     border-radius: 10px;
     border-style: none;
@@ -38,11 +28,13 @@ section {
     border-right-style: 1px solid;
     border-bottom-style: none;
     border-left-style: 1px solid;
+    text-align: center;
 }
 
-.game-status {
-    color: rgb(70, 70, 70);
-    margin:  25px auto;
+.game-title {
+    color: rgb(61, 65, 71);
+    font-size: 35px;
+    text-align: center;
 }
 
 .game-restart {
@@ -60,20 +52,7 @@ section {
 }
 
 .game-singlePlayer {
-    font-size: 13px;
-    font-family: 'verdana', cursive;
-    font-weight: 550;
-    color: rgb(59, 59, 59);
-    background-color: rgb(199, 199, 199);
-    padding: 14px;
-    margin: 15px auto;
-    border: 3px solid rgb(70, 70, 70);
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-
-.Vs-AI {
+    display: block;
     font-size: 13px;
     font-family: 'verdana', cursive;
     font-weight: 550;
@@ -87,6 +66,7 @@ section {
 }
 
 .smaller-game {
+    display: block;
     font-size: 13px;
     font-family: 'verdana', cursive;
     font-weight: 550;
@@ -96,9 +76,24 @@ section {
     margin: 15px auto;
     border: 3px solid rgb(70, 70, 70);
     border-radius: 8px;
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 
-a:link {
+.bigger-game {
+    display: block;
+    font-size: 13px;
+    font-family: 'verdana', cursive;
+    font-weight: 550;
     color: rgb(59, 59, 59);
+    background-color: rgb(199, 199, 199);
+    padding: 14px;
+    margin: 15px auto;
+    border: 3px solid rgb(70, 70, 70);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.end-game {
+    color: rgb(70, 70, 70);
+    margin:  25px auto;
 }
