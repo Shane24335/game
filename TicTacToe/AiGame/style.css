@@ -64,7 +64,7 @@ section {
     cursor: pointer;
 }
 
-.game-singlePlayer {
+.game-multiPlayer {
     font-size: 13px;
     font-family: 'verdana', cursive;
     font-weight: 550;
