@@ -105,6 +105,4 @@ function restartGame() {
     location.reload();
 }
 
-var gameBoard = document.getElementById("game-container")
-
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', cellClick));
