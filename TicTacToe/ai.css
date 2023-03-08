@@ -37,6 +37,13 @@ body {
     text-align: center;
 }
 
+.game-subTitle {
+    color: rgb(61, 65, 71);
+    font-size: 20px;
+    margin: auto;
+    text-align: center
+}
+
 .game-restart {
     display: block;
     font-size: 13px;
