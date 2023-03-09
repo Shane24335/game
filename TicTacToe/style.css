@@ -65,6 +65,7 @@ section {
 }
 
 .game-singlePlayer {
+    display: block;
     font-size: 13px;
     font-family: 'verdana', cursive;
     font-weight: 550;
@@ -78,6 +79,7 @@ section {
 }
 
 .ai {
+    display: block;
     font-size: 13px;
     font-family: 'verdana', cursive;
     font-weight: 550;
@@ -91,6 +93,7 @@ section {
 }
 
 .bigger-game {
+    display: block;
     font-size: 13px;
     font-family: 'verdana', cursive;
     font-weight: 550;
