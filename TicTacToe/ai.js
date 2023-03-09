@@ -88,12 +88,8 @@ function onGameOver({ index, player }) {
 function onDeclareWinner(who) {
   // console.log('Result: ', who);
   document.querySelector('.end-game').style.display = 'block';
-  document.querySelector('.end-game .text').innerText = `Result: ${who}`;
+  document.querySelector('.end-game .text').innerText = `${who}`;
 }
-
-/**
- * Bot moves
- */
 
 function onCheckGameTie() {
   if (emptySquares().length === 0) {
