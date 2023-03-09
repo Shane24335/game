@@ -1,6 +1,7 @@
 let origBoard;
-const HUMAN_PLAYER = '0';
-const AI_PLAYER = 'x';
+
+const HUMAN_PLAYER = 'O';
+const AI_PLAYER = 'X';
 
 const winCombos = [
   [0, 1, 2],
@@ -88,8 +89,13 @@ function onGameOver({ index, player }) {
 function onDeclareWinner(who) {
   // console.log('Result: ', who);
   document.querySelector('.end-game').style.display = 'block';
+
   document.querySelector('.end-game .text').innerText = `${who}`;
 }
+
+
+}
+
 
 function onCheckGameTie() {
   if (emptySquares().length === 0) {
