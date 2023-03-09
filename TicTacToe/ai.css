@@ -44,6 +44,13 @@ body {
     text-align: center
 }
 
+.text {
+    color: rgb(61, 65, 71);
+    font-size: 20px;
+    margin: auto;
+    text-align: center
+}
+
 .game-restart {
     display: block;
     font-size: 13px;
