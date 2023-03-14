@@ -94,7 +94,6 @@ function onDeclareWinner(who) {
 }
 
 
-}
 
 
 function onCheckGameTie() {
