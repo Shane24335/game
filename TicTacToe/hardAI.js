@@ -93,9 +93,6 @@ function onDeclareWinner(who) {
   document.querySelector('.end-game .text').innerText = `${who}`;
 }
 
-
-
-
 function onCheckGameTie() {
   if (emptySquares().length === 0) {
     for (let i = 0; i < cells.length; i++) {

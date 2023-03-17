@@ -1,6 +1,6 @@
 let origBoard;
-const HUMAN_PLAYER = '0';
-const AI_PLAYER = 'x';
+const HUMAN_PLAYER = 'O';
+const AI_PLAYER = 'X';
 
 const winCombos = [
   [0, 1, 2],
